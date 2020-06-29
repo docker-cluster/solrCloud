@@ -8,7 +8,7 @@
 
 网络：solr-cloud
 
-中文分词fieldType：cn_text
+smartcn中文分词fieldType：cn_text
 
 ## 部署
 
