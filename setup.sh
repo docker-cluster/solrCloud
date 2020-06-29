@@ -10,7 +10,7 @@ echo "***************************solrCloud containers inited********************
 
 echo "***************************start to configure solrCloud***************************"
 docker exec -it solr1 /opt/solr/server/scripts/cloud-scripts/zkcli.sh -zkhost solr-zk1:2181,solr-zk2:2181,solr-zk3:2181 -cmd upconfig -confdir /opt/solr/server/solr/configsets/sample_techproducts_configs/conf -confname solrcloud-conf
-docker exec -it solr-zk1 bin/zkCli.sh -server solr-zk2:2181
+echo quit | docker exec -i solr-zk1 bin/zkCli.sh -server solr-zk2:2181
 docker cp ./config/solrconfig.xml solr1:/opt/solr/server/solr/configsets/sample_techproducts_configs/conf/solrconfig.xml
 docker cp ./config/managed-schema solr1:/opt/solr/server/solr/configsets/sample_techproducts_configs/conf/managed-schema
 docker exec -it solr1 /opt/solr/server/scripts/cloud-scripts/zkcli.sh -zkhost solr-zk1:2181,solr-zk2:2181,solr-zk3:2181 -cmd putfile /configs/solrcloud-conf/solrconfig.xml /opt/solr/server/solr/configsets/sample_techproducts_configs/conf/solrconfig.xml
