@@ -30,7 +30,6 @@ curl "$local_ip:30008/solr/admin/collections?action=RELOAD&name=collection2"
 echo "***************************collection1 created***************************"
 
 echo "success"
-chmod -x ./config/setup.sh
 
 exit 0
 
