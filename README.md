@@ -22,5 +22,3 @@ chmod +x setup.sh
 ## 测试
 
 浏览器访问 服务器ip:30005/solr -> Cloud
-
-
