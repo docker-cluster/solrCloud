@@ -14,6 +14,7 @@ echo quit | docker exec -i solr-zk1 bin/zkCli.sh -server solr-zk2:2181
 chmod a+r ./config/solrconfig.xml ./config/managed-schema
 docker cp ./config/solrconfig.xml solr1:/opt/solr/server/solr/configsets/sample_techproducts_configs/conf/solrconfig.xml
 docker cp ./config/managed-schema solr1:/opt/solr/server/solr/configsets/sample_techproducts_configs/conf/managed-schema
+chmod a-r ./config/solrconfig.xml ./config/managed-schema
 docker exec -it solr1 /opt/solr/server/scripts/cloud-scripts/zkcli.sh -zkhost solr-zk1:2181,solr-zk2:2181,solr-zk3:2181 -cmd putfile /configs/solrcloud-conf/solrconfig.xml /opt/solr/server/solr/configsets/sample_techproducts_configs/conf/solrconfig.xml
 docker exec -it solr1 /opt/solr/server/scripts/cloud-scripts/zkcli.sh -zkhost solr-zk1:2181,solr-zk2:2181,solr-zk3:2181 -cmd putfile /configs/solrcloud-conf/managed-schema /opt/solr/server/solr/configsets/sample_techproducts_configs/conf/managed-schema
 echo "***************************solrCloud configured done***************************"
@@ -29,6 +30,7 @@ curl "$local_ip:30008/solr/admin/collections?action=RELOAD&name=collection2"
 echo "***************************collection1 created***************************"
 
 echo "success"
+chmod -x ./config/setup.sh
 
 exit 0
 
