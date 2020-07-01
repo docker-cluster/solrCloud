@@ -10,7 +10,7 @@ services:
       - SOLR_PORT=30005
       - SOLR_HOST=dev.covfefe.com
     extra_hosts:
-      - dev.covfefe.com:HOSTIP
+      - dev.covfefe.com:{{ HOSTIP }}
     networks:
       - solr-cloud
     depends_on:
@@ -28,7 +28,7 @@ services:
       - SOLR_PORT=30006
       - SOLR_HOST=dev.covfefe.com
     extra_hosts:
-      - dev.covfefe.com:HOSTIP
+      - dev.covfefe.com:{{ HOSTIP }}
     networks:
       - solr-cloud
     depends_on:
@@ -46,7 +46,7 @@ services:
       - SOLR_PORT=30007
       - SOLR_HOST=dev.covfefe.com
     extra_hosts:
-      - dev.covfefe.com:HOSTIP
+      - dev.covfefe.com:{{ HOSTIP }}
     networks:
       - solr-cloud
     depends_on:
@@ -64,7 +64,7 @@ services:
       - SOLR_PORT=30008
       - SOLR_HOST=dev.covfefe.com
     extra_hosts:
-      - dev.covfefe.com:HOSTIP
+      - dev.covfefe.com:{{ HOSTIP }}
     networks:
       - solr-cloud
     depends_on:
