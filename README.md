@@ -10,6 +10,18 @@
 
 smartcn中文分词fieldType：cn_text
 
+目录结构：
+
+``` bash
+solrCloud/
+├── config
+│   ├── managed-schema
+│   └── solrconfig.xml
+├── docker-compose.yml
+├── README.md
+└── setup.sh
+```
+
 ## 部署
 
 ``` bash
