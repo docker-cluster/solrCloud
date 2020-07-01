@@ -1,10 +1,10 @@
 #!/bin/bash
 
 echo "***************************start to init solrCloud containers***************************"
-docker-compose down
 local_host="`hostname --fqdn`"
 local_ip=`host $local_host 2>/dev/null | awk '{print $NF}'`
 sed -i "s/{{ HOSTIP }}/$local_ip/g" docker-compose.yml
+docker-compose down
 docker-compose up -d
 echo "***************************solrCloud containers inited***************************"
 
